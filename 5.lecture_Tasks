@@ -84,3 +84,15 @@ for i in range(number, number_2+1):
     print(f"{number} kubā ir {square}")
     number = number+1
 print(f"Visi kubi {number_list}")
+
+
+# 3. Apgrieztie vārdi
+# Lietotājs ievada teikumu.
+# Izvadam visus teikuma vārdus apgrieztā formā.
+# Alus kauss -> Sula ssuak
+# PS Te varētu noderēt split un join operācijas.
+
+#without LIST
+sentence = input("Please enter your sentence!")
+reverse_sentence = sentence [::-1]
+print(reverse_sentence)
