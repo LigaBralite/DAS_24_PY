@@ -60,6 +60,7 @@ while user_input != "q":
 # Visi kubi: [8,27,64,125]
 # PS teoretiski varētu iztikt bez list, bet ar list būs ērtāk
 
+#Using WHILE loop
 number_list = []
 number = round(float(input("Enter start number for calculations")))
 number_2 = round(float(input("Enter end number for calculations")))
@@ -69,5 +70,17 @@ while number <= number_2:
     number_list.append(square)
     print(f"{number} kubā ir {square}")
     i = number+1
+    number = number+1
+print(f"Visi kubi {number_list}")
+
+#Using FOR
+number_list = []
+number = round(float(input("Enter start number for calculations")))
+number_2 = round(float(input("Enter end number for calculations")))
+square = int()
+for i in range(number, number_2+1):
+    square = number**3
+    number_list.append(square)
+    print(f"{number} kubā ir {square}")
     number = number+1
 print(f"Visi kubi {number_list}")
