@@ -1,0 +1,73 @@
+# Klases Uzdevumi - Lists
+# PS Iziešana no programmas ir ievadot "q"
+
+#1a Vidējā vērtība. Uzrakstīt programmu, kas liek lietotājam ievadīt skaitļus(float).
+#Programma pēc katra ievada rāda visu ievadīto skaitļu vidējo vērtību.
+
+number = 0
+input_count = 0
+total = 0
+user_input = ""
+avg = 0
+while user_input != "q":
+    try:
+        number = user_input = input("Enter number or letter q to quit and press enter")
+        if user_input.lower().startswith("q"):
+             print("okay let's leave")
+             break
+    except ValueError:
+         print("Please enter a number!")
+         continue
+    input_count+=1
+    number = float(user_input)
+    total = total + number
+    avg = total / input_count
+    print(f"Avergae of your provided numbers is {avg}")
+
+#1.b Programma rāda gan skaitļu vidējo vērtību, gan VISUS ievadītos skaitļus
+number_list = []
+number = 0
+input_count = 0
+total = 0
+user_input = ""
+avg = 0
+while user_input != "q":
+    try:
+        number = user_input = input("Enter number or letter q to quit and press enter")
+        if user_input.lower().startswith("q"):
+             print(f"Okay let's leave, you have entered {input_count} numbers. Thank you!")
+             break
+        number = float(user_input)
+    except ValueError:
+        print("Please enter a number!")
+        continue
+    input_count+=1 #could be replaced with len(number_list)
+    number_list.append(number)
+    total = total + number
+    avg = round(total / input_count,2)
+    print(f"Average of your provided numbers is {avg}, You have entered numbers {number_list}")
+
+
+# 2. Kubu tabula
+# Lietotājs ievada sākumu (veselu skaitli) un beigu skaitli.
+# Izvads ir ievadītie skaitļi un to kubi
+# Piemēram: ievads 2 un 5 (divi ievadi)
+# Izvads 
+# 2 kubā: 8
+# 3 kubā: 27
+# 4 kubā: 64
+# 5 kubā: 125
+# Visi kubi: [8,27,64,125]
+# PS teoretiski varētu iztikt bez list, bet ar list būs ērtāk
+
+number_list = []
+number = round(float(input("Enter start number for calculations")))
+number_2 = round(float(input("Enter end number for calculations")))
+square = int()
+while number <= number_2:
+    square = number**3
+    number_list.append(square)
+    print(f"{number} kubā ir {square}")
+    i = number+1
+    number = number+1
+print(f"Visi kubi {number_list}")
