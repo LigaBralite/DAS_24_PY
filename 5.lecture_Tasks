@@ -92,7 +92,10 @@ print(f"Visi kubi {number_list}")
 # Alus kauss -> Sula ssuak
 # PS Te varētu noderēt split un join operācijas.
 
-#without LIST
 sentence = input("Please enter your sentence!")
 reverse_sentence = sentence [::-1]
-print(reverse_sentence)
+words = reverse_sentence.split()
+print(words)
+words = words [::-1]
+new_sentence = ' '.join(words)
+print(new_sentence) #Capital letter still missing
