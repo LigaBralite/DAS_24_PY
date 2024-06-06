@@ -68,9 +68,8 @@ while scoreS < BJ and scoreD < BJ:
 
 # REMARK: Game made assuming that after player stops dealer gets only one hand
 # Initial version, planned TODO changes before final submission deadline:
-            # 1. Make sure deck is updated after each dealt card (taking it out from deck)
-            # 2. Optimize few blocks that are repeated in several blocks (score calculation for card; score comparison with BJ value)
-            # 3. Validate input (Y/N) and throw error in case another value given
+            # 1. Optimize few blocks that are repeated in several blocks (score calculation for card; score comparison with BJ value)
+            # 2. Validate input (Y/N) and throw error in case another value given
 # Potential changes if more time
             # 1. Try another way of code (without While loop)
             # 2. Could be improved giving dealer option to play several hands
