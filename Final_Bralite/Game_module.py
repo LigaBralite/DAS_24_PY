@@ -66,7 +66,7 @@ while scoreS < BJ and scoreD < BJ:
                 print("You win!")
             break
 
-# REMARK: Game made assuming that after player stops dealer gets only one hand
+# REMARK: Game made assuming that after player stops dealer gets only one hand and wins player with biggest score
 # Initial version, planned TODO changes before final submission deadline:
             # 1. Optimize few blocks that are repeated in several blocks (score calculation for card; score comparison with BJ value)
             # 2. Validate input (Y/N) and throw error in case another value given
