@@ -6,7 +6,7 @@ deck = Deck()
 deck.shuffle_deck()
 BJ = 21
 
-while scoreS < BJ or scoreD < BJ:
+while scoreS < BJ and scoreD < BJ:
     card = deck.deal_self()[0] 
     print(card)
     rank, suit = card
