@@ -70,11 +70,10 @@ while scoreS < BJ or scoreD < BJ:
             print("Please enter 'y' for Yes or 'n' for No.")
 
 
+# REMARK: Game made assuming that after player stops dealer gets only one hand and wins player with biggest score
 # Initial version, planned TODO changes before final submission deadline:
-            # 1. DONE Make sure deck is updated after each dealt card (taking it out from deck)
-            # 2. DONE Optimize few blocks that are repeated in several blocks (score calculation for card; score comparison with BJ value)
-            # 3. DONE Validate input (Y/N) and throw error in case another value given
-            # 4. Allow dealer to stop before last player deal
+            # 1. DONE Optimize few blocks that are repeated in several blocks (score calculation for card; score comparison with BJ value)
+            # 2. DONE Validate input (Y/N) and throw error in case another value given
 # Potential changes if more time
             # 1. Try another way of code (without While loop)
             # 2. DONE Could be improved giving dealer option to play several hands
