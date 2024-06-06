@@ -13,68 +13,62 @@ def card_value(card):
         return 11
     else:
         return int(rank)
-    
-def result(score):
-    if score == BJ:
-        print("Blackjack!")
-    elif score > BJ:
-        print("Bust!")
-    else:
-        return None
 
-while scoreS < BJ or scoreD < BJ:
+while scoreS < BJ and scoreD < BJ:
     card = deck.deal_self()[0] 
     print(card)
     rank, suit = card
     scoreS += card_value(card)
-    resultS = result(scoreS)
-    if resultS:
-        print(f"End of game! Your score {scoreS} - {resultS}")
+    print(f"Your current score: {scoreS}")
+    if scoreS == BJ:
+        print("Blackjack!")
+        break
+    elif scoreS > BJ:
+        print(f"You are bust! Score {scoreS}")
         break
     else:
-        print(f"Your current score: {scoreS}")   
-    card = deck.deal_dealer()[0] 
-    print(card)
-    rank, suit = card
-    scoreD += card_value(card)
-    resultD = result(scoreD)
-    if resultD:
-        print(f"End of game! Dealer score {scoreD} - {resultD}")
-        break
-    else:
+        card = deck.deal_dealer()[0] 
+        print(card)
+        rank, suit = card
+        scoreD += card_value(card)
         print(f"Dealer's current score: {scoreD}")
-
-    while True:
+        if scoreD == BJ:
+            print("Blackjack!")
+            break
+        elif scoreD > BJ:
+            print(f"Dealer bust! Score {scoreD}")
+            break
+        
         choice = input("Do you want another card? (y/n)")
+        while choice.lower() not in ["y", "n"]:
+            print("Please enter a valid value - 'Y' for Yes and 'N' for No")
+            choice = input("Do you want another card? (y/n)")
+
         if choice.lower() == "n":
-            print("As You wish, let's see what I have 🃏")
-            while scoreD < 17:
-                card = deck.deal_dealer()[0] 
-                print(card)
-                scoreD += card_value(card)
-                if scoreD >= BJ or scoreD > scoreS:
-                    break
-            
+            print("As you wish, let's see what I have 🃏")
+            card = deck.deal_dealer()[0] 
+            print(card)
+            rank, suit = card
+            scoreD += card_value(card)
+            print(f"Dealer's current score: {scoreD}")
             if scoreD == BJ:
-                print("Dealer gets Blackjack!")
+                print("Blackjack!")
+                break
             elif scoreD > BJ:
                 print(f"Dealer busted! Score {scoreD}")
+                break 
             elif scoreD > scoreS:
-                print(f"Dealer wins! Score {scoreD}")
+                print(f"Dealer wins with score {scoreD} VS Your score {scoreS}")
+                break
             else:
                 print(f"You win! Score {scoreS}")
             break
-        elif choice == "y":
-            break
-        else:
-            print("Please enter 'y' for Yes or 'n' for No.")
-
 
 # REMARK: Game made assuming that after player stops dealer gets only one hand and wins player with biggest score
 # Initial version, planned TODO changes before final submission deadline:
-            # 1. DONE Optimize few blocks that are repeated in several blocks (score calculation for card; score comparison with BJ value)
+            # 1. DONE Optimize few blocks that are repeated in several blocks (score calculation for card)
             # 2. DONE Validate input (Y/N) and throw error in case another value given
 # Potential changes if more time
             # 1. Try another way of code (without While loop)
-            # 2. DONE Could be improved giving dealer option to play several hands
+            # 2. Could be improved giving dealer option to play several hands
             # 3. Several player mode
